@@ -1,0 +1,480 @@
+@font-face  
+    font-family: 'Montserrat'
+    font-weight: 500
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype')
+
+@font-face  
+    font-family: 'Montserrat'
+    font-weight: 600
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype')
+
+$bgcolor: #E5E5E5
+$titles: #1B234A
+$text: #616F97
+$active-input: #40B3B7
+$mint: #40B3B7
+$lightmint: #DAFBF1
+$main: #A0A8C5
+
+p
+	margin: 0
+
+input[type=radio],
+input[type=checkbox]
+	display: none
+
+.body
+	background-color: $bgcolor
+	margin: 0
+	height: 100%
+	position: relative
+
+.body,.button,input
+	font-family: Montserrat
+
+.mobile-br
+	display: none
+
+.container
+	width: 848px
+	margin: 0 auto
+	padding-top: 109px
+	padding-bottom: 202px
+
+.container__title
+	line-height: 52px
+	margin: 0 0 24px
+	font-weight: 600
+	font-size: 40px
+
+.title
+	color: $titles
+
+.profile-wrp
+	background-color: #FFF
+	border-radius: 8px 
+	box-shadow: 0px 0px 1px rgba(27, 35, 74, 0.15), 0px 4px 6px rgba(27, 35, 74, 0.06)
+	padding-top: 27px
+	padding-bottom: 32px
+
+.profile__image
+	width: 464px
+	margin: 0px auto 53px
+	display: block
+
+.profile-content__title
+	font-weight: 600
+	font-size: 26px
+	line-height: 36px
+	text-align: center
+	margin: 0 auto 24px
+
+.profile-content__text
+	width: 762px
+	font-weight: 500
+	font-size: 16px
+	line-height: 28px
+	text-align: center
+	color: $text
+	margin: 0 auto 40px
+	padding: 0 50px
+	box-sizing: border-box
+
+.button
+	background-color: $mint
+	border: none
+	outline: none
+	color: #FFF
+	font-weight: 600
+	border-radius: 4px
+	height: 48px
+	display: flex
+	align-items: center
+	padding: 0
+	transition: .2s
+	cursor: pointer
+	font-size: 13px
+	&:hover
+		background-color: $mint - #0f0f0f
+	&:focus
+		background-color: $mint - #0f0f0f
+	&:active
+		background-color: $mint - #171717
+
+.profile-btn
+	margin: 0 auto
+
+.profile-btn__left
+	padding: 0 16px
+	border-right: 1px solid #36A1AF
+	height: 24px
+	line-height: 24px
+
+.profile-btn__right
+	position: relative
+	display: flex
+	align-items: center
+	padding: 0 17px
+	&:before
+		content: ''
+		display: block
+		width: 18px
+		height: 18px
+		background-image: url('../img/+100.svg')
+		margin-right: 4px
+
+.overlay
+	width: 100%
+	min-height: 100%
+	overflow: hidden
+	position: absolute
+	top: 0
+	display: none
+
+.show
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	animation: fadeIn .2s both
+
+@keyframes fadeIn
+  	to
+    	background-color: rgba(27, 35, 74, 0.7)
+
+.popup
+	background-color: #FFFFFF
+	box-shadow: 0px 4px 10px rgba(27, 35, 74, 0.25)
+	border-radius: 8px
+	width: 763px
+	margin-top: 52px
+	margin-bottom: 52px
+	position: relative
+	padding: 32px
+	box-sizing: border-box
+
+.cross
+	width: 14px
+	height: 14px
+	position: absolute
+	right: 37px
+	top: 37px
+	cursor: pointer
+	transition: .2s
+	&:hover
+		.cross__line
+			background-color: $titles - #111
+			opacity: 1
+	&:active
+		.cross__line:nth-child(1)
+			transform: rotate(20deg) 
+		.cross__line:nth-child(2)
+			transform: rotate(-20deg)
+
+.cross__line
+	width: 18px
+	height: 2px
+	background-color: $titles
+	position: absolute
+	border-radius: 2px
+	left: -2px
+	top: 6px
+	opacity: 0.8
+	transition: .2s
+
+.cross__line:nth-child(1)
+	transform: rotate(45deg) scale(1)
+
+.cross__line:nth-child(2)
+	transform: rotate(-45deg) scale(1)
+
+.popup__title
+	font-weight: 600
+	font-size: 20px
+	line-height: 28px
+	margin-bottom: 27px
+
+.risks__title
+	font-size: 18px
+	line-height: 24px
+	margin-bottom: 16px
+
+.risks__annotatation
+	background: #FFF4CC
+	border-radius: 4px
+	font-size: 14px
+	line-height: 20px
+	padding: 16px
+	margin-bottom: 24px
+
+.risk-item__title,
+.gender-item__title
+	font-weight: 600
+	font-size: 14px
+	line-height: 20px
+	margin-bottom: 18px
+
+.smoke
+	display: flex
+	flex-direction: column
+	margin-bottom: 6px
+
+.smoke__input-cont,
+.gender__input-cont
+	margin-bottom: 20px
+
+.smoke__label
+	color: #18204A
+
+.genetics__title
+	font-size: 16px
+	line-height: 28px
+	margin-bottom: 8px
+
+.genetics__annotatation
+	font-size: 12px
+	line-height: 18px
+	color: $main
+	margin-bottom: 16px
+
+.gender
+	display: flex
+
+.gender__item
+	width: 50%
+
+.smoke__label
+	&:before
+		content: ''
+		display: block
+		width: 20px
+		height: 20px
+		background-color: #F3F6FB
+		border: 2px solid $main
+		box-sizing: border-box
+		border-radius: 100px
+		margin-right: 8px
+	&:after
+		opacity: 0
+		content: ''
+		width: 10px
+		height: 10px
+		background-color: $active-input
+		position: absolute 
+		border-radius: 100px
+		margin: 5px
+		transition: .2s
+
+.gender__label
+	color: $titles
+
+.gender__label,
+.smoke__label
+	font-size: 14px
+	line-height: 20px
+	display: flex
+	position: relative
+	cursor: pointer
+	transition: .2s
+	&:active
+		opacity: 0.8
+	&:before
+		content: ''
+		display: block
+		width: 20px
+		height: 20px
+		background-color: #F3F6FB
+		border: 2px solid $main
+		box-sizing: border-box
+		margin-right: 8px
+	&:after
+		left: 0
+		opacity: 0
+		content: ''
+		transition: .2s
+		background-color: $active-input
+
+.smoke__label
+	&:before
+		border-radius: 100px
+	&:after
+		width: 10px
+		height: 10px
+		position: absolute 
+		border-radius: 100px
+		margin: 5px
+
+.gender__label
+	&:before
+		border-radius: 4px
+	&:after
+		left: 0
+		width: 20px
+		height: 20px
+		border-radius: 4px
+		position: absolute 
+		background-image: url('../img/check.svg')
+		background-size: 8px
+		background-position: center
+		background-repeat: no-repeat
+
+.gender__input,
+.smoke__input
+	&:checked
+		+ .gender__label,
+		+ .smoke__label
+			&:after
+				opacity: 1
+
+.sick__title
+	margin-bottom: 4px
+
+.sick__input
+	padding: 9px 12px
+	font-size: 16px
+	line-height: 28px
+	color: $titles
+	border: 1px solid $main
+	box-sizing: border-box
+	border-radius: 4px
+	width: 100%
+	margin-bottom: 16px
+	&::placeholder
+		color: $main
+	&:focus
+		border-color: $active-input
+		box-shadow: 0px 0px 1px $active-input
+
+.sick__result
+	margin-bottom: 18px
+	display: flex
+	flex-wrap: wrap
+
+.sick__item
+	display: inline-flex
+	align-items: center
+	font-size: 14px
+	line-height: 20px
+	color: $mint
+	background-color: $lightmint
+	border-radius: 4px
+	padding: 6px 31px 6px 9px
+	margin-bottom: 8px
+	margin-right: 8px
+	position: relative
+	cursor: pointer
+	transition: .2s
+	&:hover
+		background-color: $lightmint - #0f0f0f
+	&:active
+		background-color: $lightmint - #171717
+	&:after
+		content: ''
+		background-image: url('../img/Union.svg')
+		width: 8px
+		height: 8px
+		display: block
+		position: absolute
+		right: 12px
+		top: 12px
+
+
+.popup__button-cont-line
+	background-color: #DEE1ED
+	height: 1px
+	width: calc( 100% + 64px )
+	margin-left: -32px
+	margin-top: 14px
+
+.popup__button
+	padding: 0px 38px
+	margin-top: 31px
+
+@media all and (max-width: 991px)
+	.container__title
+		font-size: 24px
+		line-height: 26px
+		margin: 0px 0px 16px 0px
+	.container
+		width: calc( 100% - 40px )
+		padding-top: 26px
+		padding-bottom: 0
+	.profile__image
+		width: calc( 100% - 26px )
+		margin: 0px auto 33px
+	.profile-content__title
+		font-size: 22px
+		line-height: 32px
+		width: 300px
+		margin: 0 auto 16px
+	.profile-content__text
+		font-size: 14px
+		line-height: 20px
+		width: 80%
+		padding: 0
+		margin: 0 auto 32px
+	.popup
+		margin-top: 26px
+		margin-bottom: 26px
+		border-radius: 4px
+		width: 80%
+
+@media all and (max-width: 375px)
+	.mobile-br
+		display: inline
+	.container__title
+		font-size: 18px
+		margin: 0px 0px 16px 16px
+	.container
+		width: 100%
+		padding-top: 16px
+	.profile-content__text
+		width: 320px
+	.popup
+		width: 100%
+		margin-top: 0
+		margin-bottom: 0
+		border-radius: 0
+		padding: 0
+	.cross
+		left: 21px
+		top: 17px
+	.popup__title
+		font-size: 14px
+		line-height: 18px
+		text-align: center
+		height: 48px
+		box-shadow: 0px 0px 1px rgba(27, 35, 74, 0.15), 0px 4px 6px rgba(27, 35, 74, 0.06)
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 24px
+	.popup__risk-wrp
+		margin-left: 16px
+		margin-right: 16px
+	.risks__annotatation
+		border-radius: 8px
+	.risk-item__title, .gender-item__title
+		font-size: 14px
+		line-height: 20px
+	.sick__result
+		margin-bottom: 16px
+	.genetics__annotatation
+		margin-bottom: 24px
+	.gender
+		flex-direction: column
+	.gender__item
+		width: 100%
+	.gender__item:nth-child(2)
+		margin-top: 14px
+	.popup__button-cont
+		margin-left: 16px
+		margin-right: 16px
+	.popup__button-cont-line
+		display: none
+	.popup__button
+		margin-top: 22px
+		margin-bottom: 25px
+		width: 100%
+		display: flex
+		justify-content: center
+		text-align: center
